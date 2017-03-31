@@ -1,5 +1,6 @@
-Test work
+Symfony template
 ========================
+This is a boilerplate to start usual symfony project, that has API with OAuth2 authorization, Admin panel (SonataAdminBundle), and a core module with business logic and domain objects. 
 
 Installation
 ========================
@@ -39,12 +40,8 @@ See admin interface at URL
 http://127.0.0.1:8000/app_dev.php/admin
 ```
 
-Check if address in area
-```
-http://127.0.0.1:8000/app_dev.php/api/v1/cities/1/addresses/вулиця+Золотоустівська+44/in-area?access_token=ODg0MzUxNDlhY2UzYzRjMGRlZTkxZTFmMjIxNmQ1NTE1YWVhZjA2MmM0MGY5OGQxM2FlYzE3OTQ2YjBiMzE1ZA&lat=50.4522151&lng=30.484598&radius=1000
-```
 
 
 Tools
 ========================
-If you use PHPStorm, you can import xml-file from the "tools" folder into the REST Client, to try to do API calls. 
+If you use PHPStorm, you can import xml-file from the "tools" folder into the REST Client, to view examples of API calls.
