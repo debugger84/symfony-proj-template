@@ -1,0 +1,25 @@
+services:
+#    api.example:
+#        class: ApiBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+
+    # User Normalizer
+    api.normalizer.city_normalizer:
+        class: ApiBundle\Normalizer\CityNormalizer
+
+    api.normalizer.city_denormalizer:
+        class: ApiBundle\Normalizer\CityDenormalizer
+        arguments: ['@app.repository.region_repository']
+
+    # Serializer
+    api.serializer.default:
+        class: Symfony\Component\Serializer\Serializer
+        arguments:
+            0:
+                - '@api.normalizer.city_normalizer'
+                - '@api.normalizer.city_denormalizer'
+                - '@serializer.normalizer.object'
+            1:
+                - '@serializer.encoder.json'
+                - '@serializer.encoder.xml'

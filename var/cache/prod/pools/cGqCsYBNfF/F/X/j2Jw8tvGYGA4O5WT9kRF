@@ -1,0 +1,3 @@
+1520284047
+ivory_serializerIvory_GoogleMap_Overlay_EncodedPolyline
+C:38:"Ivory\Serializer\Mapping\ClassMetadata":421:{a:3:{i:0;s:39:"Ivory\GoogleMap\Overlay\EncodedPolyline";i:1;a:1:{s:5:"value";C:41:"Ivory\Serializer\Mapping\PropertyMetadata":281:{a:19:{i:0;s:5:"value";i:1;s:39:"Ivory\GoogleMap\Overlay\EncodedPolyline";i:2;s:6:"points";i:3;C:37:"Ivory\Serializer\Mapping\TypeMetadata":33:{a:2:{i:0;s:6:"string";i:1;a:0:{}}}i:4;N;i:5;N;i:6;N;i:7;N;i:8;N;i:9;N;i:10;N;i:11;a:0:{}i:12;N;i:13;N;i:14;N;i:15;N;i:16;N;i:17;N;i:18;N;}}}i:2;N;}}

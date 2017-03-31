@@ -1,0 +1,50 @@
+<RestClientRequest>
+  <option name="biscuits">
+    <list>
+      <Biscuit>
+        <option name="date" value="1519970660194" />
+        <option name="domain" value="localhost" />
+        <option name="name" value="XDEBUG_SESSION" />
+        <option name="path" value="/" />
+        <option name="value" value="PHPSTORM" />
+      </Biscuit>
+    </list>
+  </option>
+  <option name="httpMethod" value="DELETE" />
+  <option name="urlBase" value="http://localhost:8000" />
+  <option name="urlPath" value="/api/v1/cities/5" />
+  <option name="headers">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="Accept" />
+        <option name="value" value="*/*" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="Cache-Control" />
+        <option name="value" value="no-cache" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parameters">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="access_token" />
+        <option name="value" value="MzE4NzM3YTcxM2U3OTljNjFkYzExM2VmYWY5MTIwOTAwMWM3YmI2MTBhYjE3NjJhNjYxYWExZjUwMWI0NDBkZg" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="name" />
+        <option name="value" value="Test7" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="region" />
+        <option name="value" value="1" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parametersEnabled" value="true" />
+  <option name="haveTextToSend" value="false" />
+  <option name="haveFileToSend" value="false" />
+  <option name="isFileUpload" value="false" />
+  <option name="textToSend" value="{&quot;name&quot;: &quot;Test5&quot;, &quot;region&quot;:1}" />
+  <option name="filesToSend" value="" />
+</RestClientRequest>

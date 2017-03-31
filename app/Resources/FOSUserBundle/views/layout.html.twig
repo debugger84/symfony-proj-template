@@ -1,0 +1,132 @@
+<html class=""><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link rel="stylesheet" href="/bundles/sonatacore/vendor/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/bundles/sonatacore/vendor/components-font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/bundles/sonatacore/vendor/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/bundles/sonataadmin/vendor/admin-lte/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/bundles/sonataadmin/vendor/admin-lte/dist/css/skins/skin-black.min.css">
+    <link rel="stylesheet" href="/bundles/sonataadmin/vendor/iCheck/skins/square/blue.css">
+    <link rel="stylesheet" href="/bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/bundles/sonataadmin/vendor/jqueryui/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/bundles/sonatacore/vendor/select2/select2.css">
+    <link rel="stylesheet" href="/bundles/sonatacore/vendor/select2-bootstrap-css/select2-bootstrap.min.css">
+    <link rel="stylesheet" href="/bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css">
+    <link rel="stylesheet" href="/bundles/sonataadmin/css/styles.css">
+    <link rel="stylesheet" href="/bundles/sonataadmin/css/layout.css">
+    <link rel="stylesheet" href="/bundles/sonataadmin/css/tree.css">
+
+
+    <script src="/bundles/sonatacore/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/bundles/sonataadmin/vendor/jquery.scrollTo/jquery.scrollTo.min.js"></script>
+    <script src="/bundles/sonatacore/vendor/moment/min/moment.min.js"></script>
+    <script src="/bundles/sonataadmin/vendor/jqueryui/ui/minified/jquery-ui.min.js"></script>
+    <script src="/bundles/sonataadmin/vendor/jqueryui/ui/minified/i18n/jquery-ui-i18n.min.js"></script>
+    <script src="/bundles/sonatacore/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/bundles/sonataadmin/vendor/jquery-form/jquery.form.js"></script>
+    <script src="/bundles/sonataadmin/jquery/jquery.confirmExit.js"></script>
+    <script src="/bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+    <script src="/bundles/sonatacore/vendor/select2/select2.min.js"></script>
+    <script src="/bundles/sonataadmin/vendor/admin-lte/dist/js/app.min.js"></script>
+    <script src="/bundles/sonataadmin/vendor/iCheck/icheck.min.js"></script>
+    <script src="/bundles/sonataadmin/vendor/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="/bundles/sonataadmin/vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="/bundles/sonataadmin/vendor/waypoints/lib/shortcuts/sticky.min.js"></script>
+    <script src="/bundles/sonataadmin/vendor/readmore-js/readmore.min.js"></script>
+    <script src="/bundles/sonataadmin/Admin.js"></script>
+    <script src="/bundles/sonataadmin/treeview.js"></script>
+
+
+
+
+    <title>
+        Admin
+
+        Dashboard
+    </title>
+    </head>
+<body class="sonata-bc skin-black fixed">
+
+<div class="wrapper">
+
+    <header class="main-header">
+        <noscript>
+            &lt;div class="noscript-warning"&gt;
+            Javascript is disabled in your web browser. Some features will not work properly.
+            &lt;/div&gt;
+        </noscript>
+        <a class="logo" href="/app_dev.php/admin/dashboard"><img src="/bundles/sonataadmin/logo_title.png" alt="Sonata Admin"><span>Sonata Admin</span></a>                                                    <nav class="navbar navbar-static-top" role="navigation">
+
+            <div class="navbar-left">
+                <div class="hidden-xs">
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <div class="content-wrapper" style="min-height: 205px;margin-left: 0; background-color: transparent">
+        <section class="content-header">
+
+        </section>
+
+        <section class="content">
+
+
+
+            <div class="sonata-ba-content">
+
+
+                <div class="row">
+
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6 panel">
+                        <div>
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                                <a href="{{ path('fos_user_security_logout') }}">
+                                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                </a>
+                            {% else %}
+                                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                            {% endif %}
+                        </div>
+
+                        {% for type, messages in app.session.flashBag.all %}
+                            {% for message in messages %}
+                                <div class="{{ type }}">
+                                    {{ message|trans({}, 'FOSUserBundle') }}
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+
+                        <div>
+                            {% block fos_user_content %}
+                            {% endblock fos_user_content %}
+                        </div>
+
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </section>
+    </div>
+</div>
+
+
+
+
+
+</body></html>

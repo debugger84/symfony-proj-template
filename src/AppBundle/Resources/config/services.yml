@@ -1,0 +1,33 @@
+services:
+    app.command.handler.add_city_handler:
+        class: AppBundle\Command\City\AddCityHandler
+        arguments: ["@app.repository.city_repository"]
+
+    app.command.handler.change_city_handler:
+        class: AppBundle\Command\City\ChangeCityHandler
+        arguments: ["@app.repository.city_repository"]
+
+    app.command.handler.delete_city_handler:
+        class: AppBundle\Command\City\DeleteCityHandler
+        arguments: ["@app.repository.city_repository"]
+
+    app.repository.city_repository:
+        class: AppBundle\Repository\CityRepository
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments: [AppBundle\Entity\City]
+
+    app.repository.region_repository:
+        class: AppBundle\Repository\RegionRepository
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments: [AppBundle\Entity\Region]
+
+    app.validator.constraint.unique_city_of_region:
+        class: AppBundle\Validator\UniqueCityOfRegionValidator
+        tags:
+            - { name: validator.constraint_validator }
+        calls:
+            - [setCityRepository, ['@app.repository.city_repository']]
+
+    app.service.address_service:
+        class: AppBundle\Service\AddressService
+        arguments: ['@ivory.google_map.geocoder']

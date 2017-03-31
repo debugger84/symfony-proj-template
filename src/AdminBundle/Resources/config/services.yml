@@ -1,0 +1,22 @@
+services:
+    admin.admin_page.city_page:
+        class: AdminBundle\AdminPage\CityPage
+        arguments: [~, AppBundle\Entity\City, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: City, group: "Location" }
+        calls:
+            - [setValidator, ['@validator']]
+            - [setChangeCityHandler, ['@app.command.handler.change_city_handler']]
+            - [setAddCityHandler, ['@app.command.handler.add_city_handler']]
+
+    admin.admin_page.region_page:
+        class: AdminBundle\AdminPage\RegionPage
+        arguments: [~, AppBundle\Entity\Region, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Region, group: "Location" }
+
+    admin.admin_page.country_page:
+        class: AdminBundle\AdminPage\CountryPage
+        arguments: [~, AppBundle\Entity\Country, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Country, group: "Location" }

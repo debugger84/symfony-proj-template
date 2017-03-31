@@ -1,0 +1,10 @@
+api_cities:
+    type: rest
+#    prefix: /api/v1
+    name_prefix: api_cities_
+    resource: ApiBundle\Controller\V1\CitiesController
+
+api_addresses:
+    type: rest
+    parent:   api_cities
+    resource: ApiBundle\Controller\V1\AddressesController
