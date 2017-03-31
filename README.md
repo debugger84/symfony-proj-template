@@ -1,0 +1,1 @@
+# symfony-proj-template
